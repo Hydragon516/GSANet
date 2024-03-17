@@ -262,9 +262,9 @@ class Slot_Attention(nn.Module):
     def initialize(self):
         weight_init(self)
 
-class MyModel(torch.nn.Module):
+class GSANet(torch.nn.Module):
     def __init__(self, num_slots=2):
-        super(MyModel, self).__init__()
+        super(GSANet, self).__init__()
         self.cfg = None
         self.rgb_encoder = SegformerForImageClassification.from_pretrained("nvidia/mit-b1")
         self.flow_encoder = SegformerForImageClassification.from_pretrained("nvidia/mit-b1")
@@ -408,11 +408,3 @@ class MyModel(torch.nn.Module):
 
     def initialize(self):
         weight_init(self)
-
-if __name__ == '__main__':
-    model = MyModel().cuda()
-    rgb = torch.randn(1, 3, 384, 384).cuda()
-    flow = torch.randn(1, 3, 384, 384).cuda()
-    rgb_ref = torch.randn(1, 9, 384, 384).cuda()
-    flow_ref = torch.randn(1, 9, 384, 384).cuda()
-    out = model(rgb, flow, rgb_ref, flow_ref)

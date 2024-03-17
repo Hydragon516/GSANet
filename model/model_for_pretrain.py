@@ -153,8 +153,3 @@ class GSANet(torch.nn.Module):
 
     def initialize(self):
         weight_init(self)
-
-if __name__ == '__main__':
-    model = GSANet().cuda()
-    rgb = torch.randn(1, 3, 256, 256).cuda()
-    out = model(rgb)
