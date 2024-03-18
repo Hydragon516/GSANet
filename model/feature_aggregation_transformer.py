@@ -1,7 +1,6 @@
 import torch
 from torch import nn, einsum
 import torch.nn.functional as F
-
 from einops import rearrange
 
 class PreNorm(nn.Module):
@@ -221,20 +220,5 @@ class Feature_Aggregation_Transformer(nn.Module):
         local_inter = self.conva(local_inter)
 
         global_tp = self.ATB(global_tp, local_inter)
-        # local_inter = self.convn(local_inter).transpose(1, 2).contiguous()
-        # local_intra = self.convl(local_intra).transpose(1, 2).contiguous()
-
-        # x_inter = torch.bmm(x_inter, local_inter)
-        # x_intra = torch.bmm(x_intra, local_intra)
-
-        # curve_features = torch.cat((x_inter, x_intra),dim=-1).transpose(1, 2).contiguous()
-        # global_tp = global_tp + self.convd(curve_features)
 
         return F.leaky_relu(global_tp, negative_slope=0.2)
-
-if __name__ == '__main__':
-    x = torch.randn(2, 128, 100)
-    z = torch.randn(2, 128, 2)
-    model = Aggregation_Transformer_Block(128, 1, 128)
-    out = model(x, z)
-    print(out.shape)
