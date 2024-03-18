@@ -32,3 +32,55 @@ Unsupervised video object segmentation aims to segment the most prominent object
 <p align="center">
   <img width="70%" alt="teaser" src="./assets/GSANet.gif">
 </p>
+
+
+## Requirements
+We use [fast_pytorch_kmeans](https://github.com/DeMoriarty/fast_pytorch_kmeans) for the GPU-accelerated Kmeans algorithm.
+```
+pip install fast-pytorch-kmeans
+```
+
+## Datasets
+We use the [DUTS](http://saliencydetection.net/duts) train dataset for model pretraining and the [DAVIS 2016](https://davischallenge.org/davis2016/code.html) dataset for fintuning. For [DAVIS 2016](https://davischallenge.org/davis2016/code.html), [RAFT](https://github.com/princeton-vl/RAFT) is used to generate optical flow maps. The complete dataset directory structure is as follows:
+
+```
+dataset dir/
+├── DUTS_train/
+│   ├── RGB/
+│   │   ├── sun_ekmqudbbrseiyiht.jpg
+│   │   ├── sun_ejwwsnjzahzakyjq.jpg
+│   │   └── ...
+│   └── GT/
+│       ├── sun_ekmqudbbrseiyiht.png
+│       ├── sun_ejwwsnjzahzakyjq.png
+│       └── ...
+├── DAVIS_train/
+│   ├── RGB/
+│   │   ├── bear_00000.jpg
+│   │   ├── bear_00001.jpg
+│   │   └── ...
+│   ├── GT/
+│   │   ├── bear_00000.png
+│   │   ├── bear_00001.png
+│   │   └── ...
+│   └── FLOW/
+│       ├── bear_00000.jpg
+│       ├── bear_00001.jpg
+│       └── ...
+└── DAVIS_test/
+    ├── blackswan/
+    │   ├── RGB/
+    │   │   ├── blackswan_00000.jpg
+    │   │   ├── blackswan_00001.jpg
+    │   │   └── ...
+    │   ├── GT/
+    │   │   ├── blackswan_00000.png
+    │   │   ├── blackswan_00001.png
+    │   │   └── ...
+    │   └── FLOW/
+    │       ├── blackswan_00000.jpg
+    │       ├── blackswan_00001.jpg
+    │       └── ...
+    ├── bmx-trees
+    └── ...
+```
