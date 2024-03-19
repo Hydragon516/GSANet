@@ -84,3 +84,39 @@ dataset dir/
     ├── bmx-trees
     └── ...
 ```
+
+## Training Model
+We use a two-stage learning strategy: pretraining and finetuning.
+
+### Pretraining
+1. Edit config.py. The data root path option and GPU index should be modified.
+2. training
+```
+python pretrain.py
+```
+
+### Finetuning
+1. Edit config.py. The best model path generated during the pretraining process is required.
+2. training
+```
+python train.py
+```
+
+## Evaluation
+TBD
+
+## Result
+An example of the resulting image is shown below.
+<img align="center" src="./assets/result.png"/>
+
+* A : RGB image
+* B : Optical Flow map
+* C : Pred map
+* D : GT
+* E : Pred forground RGB slot attention map
+* F : Pred background RGB slot attention map
+* G : Pred forground Flow slot attention map
+* H : Pred background Flow slot attention map
+
+## Citation
+TBD
