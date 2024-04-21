@@ -25,6 +25,9 @@
 <br>
 </div>
 
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/guided-slot-attention-for-unsupervised-video/unsupervised-video-object-segmentation-on-10)](https://paperswithcode.com/sota/unsupervised-video-object-segmentation-on-10?p=guided-slot-attention-for-unsupervised-video)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/guided-slot-attention-for-unsupervised-video/unsupervised-video-object-segmentation-on-11)](https://paperswithcode.com/sota/unsupervised-video-object-segmentation-on-11?p=guided-slot-attention-for-unsupervised-video)
+
 ## Abstract
 Unsupervised video object segmentation aims to segment the most prominent object in a video sequence. However, the existence of complex backgrounds and multiple foreground objects make this task challenging. To address this issue, we propose a guided slot attention network to reinforce spatial structural information and obtain better foreground--background separation. The foreground and background slots, which are initialized with query guidance, are iteratively refined based on interactions with template information. Furthermore, to improve slot--template interaction and effectively fuse global and local features in the target and reference frames, K-nearest neighbors filtering and a feature aggregation transformer are introduced. The proposed model achieves state-of-the-art performance on two popular datasets. Additionally, we demonstrate the robustness of the proposed model in challenging scenes through various comparative experiments.
 
