@@ -122,4 +122,13 @@ An example of the resulting image is shown below.
 * H : Pred background Flow slot attention map
 
 ## Citation
-TBD
+```
+@InProceedings{Lee_2024_CVPR,
+    author    = {Lee, Minhyeok and Cho, Suhwan and Lee, Dogyoon and Park, Chaewon and Lee, Jungho and Lee, Sangyoun},
+    title     = {Guided Slot Attention for Unsupervised Video Object Segmentation},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2024},
+    pages     = {3807-3816}
+}
+```
