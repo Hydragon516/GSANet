@@ -103,7 +103,7 @@ class Multi_Scale_Feature_Fusion_Module(nn.Module):
 class GSANet(torch.nn.Module):
     def __init__(self):
         super(GSANet, self).__init__()
-        self.rgb_encoder = SegformerForImageClassification.from_pretrained("nvidia/mit-b1")
+        self.rgb_encoder = SegformerForImageClassification.from_pretrained("nvidia/mit-b2")
 
         self.rgb_MFFM1 = Multi_Scale_Feature_Fusion_Module(512, 128)
         self.rgb_MFFM2 = Multi_Scale_Feature_Fusion_Module(320, 128)
