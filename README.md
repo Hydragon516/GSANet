@@ -106,7 +106,7 @@ python train.py
 ```
 
 ## Evaluation
-TBD
+See this [link](https://github.com/yongliu20/DAVIS-evaluation).
 
 ## Result
 An example of the resulting image is shown below.
